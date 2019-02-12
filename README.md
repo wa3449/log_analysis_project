@@ -15,7 +15,11 @@ following:
 1. The first step is to prepare the environment as described in
 [Lesson 3 Prepare the software and the data](https://classroom.udacity.com/nanodegrees/nd004/parts/51200cee-6bb3-4b55-b469-7d4dd9ad7765/modules/c57b57d4-29a8-4c5f-9bb8-5d53df3e48f4/lessons/bc938915-0f7e-4550-a48f-82241ab649e3/concepts/a9cf98c8-0325-4c68-b972-58d5957f1a91) of the Log Analysis Project.
 
-2. Clone the remote git repo on your computer.
+2. Clone the remote git repo on your computer using the web URL:
+
+```
+https://github.com/wa3449/log_analysis_project.git
+```
 
 ## Usage
 The python application will run from the command line and does not require
@@ -28,7 +32,7 @@ the log reporting tool application is run.
 command line:
 
 ```
-$ python3 log_reporting_tool
+$ python log_reporting_tool
 ```
 
 2. Once the command completes, you can then view the log_report.txt file for
