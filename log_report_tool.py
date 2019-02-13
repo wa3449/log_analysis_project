@@ -23,14 +23,12 @@ def mostPopular3Articles():
         GROUP BY a.title
         ORDER BY count(*) DESC LIMIT 3"""
 
-    """Connect to database, open cursor, execute query, and
-    fetch result set."""
     db = connect()
     cur = db.cursor()
     cur.execute(query)
     rs = cur.fetchall()
 
-    """Write the report result."""
+    # Write the report result.
     print("3 most popular articles of all time:")
     print
     for r in rs:
@@ -39,7 +37,6 @@ def mostPopular3Articles():
     print
     print
 
-    """Close cursor and db connection."""
     cur.close()
     db.close()
     return
@@ -54,14 +51,12 @@ def mostPopularArticleAuthors():
         GROUP BY p.name
         ORDER BY count(*) DESC"""
 
-    """Connect to database, open cursor, execute query, and
-    fetch result set."""
     db = connect()
     cur = db.cursor()
     cur.execute(query)
     rs = cur.fetchall()
 
-    """Write the report result."""
+    # Write the report result.
     print("Most popular article authors of all time:")
     print
     for r in rs:
@@ -70,7 +65,6 @@ def mostPopularArticleAuthors():
     print
     print
 
-    """Close cursor and db connection."""
     cur.close()
     db.close()
     return
@@ -99,14 +93,12 @@ def daysWithErrorRateGT1():
             ORDER BY dailyRequestErrors.rqstDate)
         SELECT * from dailyErrorRate where errorPercent > 1"""
 
-    """Connect to database, open cursor, execute query, and
-    fetch result set."""
     db = connect()
     cur = db.cursor()
     cur.execute(query)
     rs = cur.fetchall()
 
-    """Write the report result."""
+    # Write the report result.
     print("Days with request error rate greater than 1%:")
     print
     for r in rs:
@@ -115,7 +107,6 @@ def daysWithErrorRateGT1():
     print
     print
 
-    """Close cursor and db connection."""
     cur.close()
     db.close()
     return
