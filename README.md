@@ -8,18 +8,38 @@ following 3 queries:
 2. Who are the most popular article authors of all time?
 3. On which days did more than 1% of requests lead to errors?
 
-## Prerequisites
+## Requirements
 To run the log reporting tool on your local computer, you will need the
 following:
 
-1. The first step is to prepare the environment as described in
-[Lesson 3 Prepare the software and the data](https://classroom.udacity.com/nanodegrees/nd004/parts/51200cee-6bb3-4b55-b469-7d4dd9ad7765/modules/c57b57d4-29a8-4c5f-9bb8-5d53df3e48f4/lessons/bc938915-0f7e-4550-a48f-82241ab649e3/concepts/a9cf98c8-0325-4c68-b972-58d5957f1a91) of the Log Analysis Project.
+### Install and configure the VM
+A Linux-based virtual machine (VM) is used to run an SQL database server and python
+application on your computer. This project is using tools called Vagrant
+and VirtualBox to install and manage the VM. Use the following URLs to install Vagrant and VirtualBox. (Note: an older version of VirtualBox is used for this project.)
 
-2. Clone the remote git repo on your computer using the web URL:
+* [Virtual Box 5.1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
+* [Vagrant](https://www.vagrantup.com)
+
+Use this [Vagrantfile](https://github.com/udacity/fullstack-nanodegree-vm/blob/master/vagrant/Vagrantfile) to ensure the VM is configured properly. The Vagrantfile should be stored in the vagrant directory.
+
+In the vagrant directory, type **vagrant up** to launch your virtual machine.
+
+Once it is up and running, type **vagrant ssh**. This will log your terminal into the virtual machine, and you'll get a Linux shell prompt.
+Change directory to the /vagrant directory by typing **cd /vagrant**.
+
+### Get the log analysis project from Github
+
+Clone the remote git repo for the log analysis project on your computer using the web URL:
 
 ```
 https://github.com/wa3449/log_analysis_project.git
 ```
+### Create the database schema and load the data needed for the Project
+
+Download the [newsdata.sql](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) file into the log analysis project directory.
+
+Run the following command to load the data: **psql -d news -f newsdata.sql**
+
 
 ## Usage
 The python application will run from the command line and does not require
@@ -28,8 +48,7 @@ and runs 3 predefined SQL queries, and then writes the query results to the
 log_report.txt text file that is located in the same directory from where
 the log reporting tool application is run.
 
-1. To run the log reporting tool application, type the following command on the
-command line:
+1. From the log analysis project directory, run the log reporting tool application, type the following command on the command line:
 
 ```
 $ python log_reporting_tool
